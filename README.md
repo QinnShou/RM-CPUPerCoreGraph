@@ -4,94 +4,73 @@
 
 (Left:Windows Task Manager / Right: Rainmeter skin)
 
-## Introduction
-
-Welcome to "Rainmeter Per-Core Graph," a highly functional Rainmeter skin crafted for detailed monitoring of CPU utilization across all 24 cores. This skin features a unique 6x4 grid layout and is designed to provide a comprehensive view of your CPU's performance with an emphasis on customization and user experience.
+## Description
+The "CPU Usage Per-Core Graph" is a Rainmeter skin plugin designed to visually display CPU usage for each logical processor. This plugin offers unique features like automatic margin adjusting and per-core coloring, making it an essential tool for monitoring CPU performance in a visually appealing way.
 
 ## Features
+- **Per-Core CPU Usage Visualization**: Displays CPU usage for each of your computer's logical processors.
+- **Per-Core Coloring**: Different colors for each CPU core, enhancing the visual distinction between cores.
+- **Automatic Margin Adjusting**: Ensures that the graph is always aligned and presented neatly.
+- **Customizable Appearance**: Options to change graph width, height, and colors according to core type manually (P-core/E-core).
 
-- **Per-Core CPU Monitoring**: Displays the utilization of each of the 24 CPU cores, offering a detailed perspective on your CPU's performance.
-- **6x4 Grid Layout**: Organizes core data in a user-friendly 6x4 grid, making it easy to read and interpret CPU activity.
-- **Customizable Appearance**: Allows for personalization in sizing and coloring, with special emphasis on color differentiation for P-core/E-core types.
-- **Real-Time Updates**: Keeps you informed with dynamic, real-time data, ensuring you always have the latest information.
-- **Resource Efficiency**: Optimized for minimal impact on system resources, combining functionality with efficiency.
+## Installation
+1. Ensure you have [Rainmeter](https://www.rainmeter.net/) installed.
+2. Download the `.rmskin` file from the [releases page](<github-release-link>).
+3. Double-click the downloaded file to install the skin.
 
-## Getting Started
+## Usage
+- Load the skin through Rainmeter's Manage interface.
+- Edit the .ini file to customize the appearance.
 
-To get started with "Rainmeter Per-Core Graph," download the `.rmskin` package from this repository. Make sure Rainmeter is installed on your system. Follow the instructions in the **Installation Guide** below to seamlessly integrate the skin into your desktop.
+## Customization
+You can customize the following aspects:
+- Graph dimensions variables (`GraphW`, `GraphH` for each graph width and height).
+- Padding variables (`GraphWPad`, `GraphHPad` for width and height padding).
 
-## Installation Guide
+### P-Core and E-Core Coloring
+This plugin supports distinct coloring options for different CPU core types:
 
-1. **Install Rainmeter**: If not already installed, download and install Rainmeter from [Rainmeter's official website](https://www.rainmeter.net/).
-2. **Download and Install the Skin**: Obtain the `.rmskin` file from this repository and double-click to install.
-3. **Load the Skin**: Right-click the Rainmeter icon in the system tray, navigate to `Skins`, find "Rainmeter Per-Core Graph", and load it.
-4. **Customize**: Right-click on the skin for customization options. Adjust the size, color, and other settings to match your desktop theme.
+- **P-Core (Performance Core) Coloring**: By default, the plugin uses the regular color settings (Line and Solid Fill) for P-cores. These are your CPU's primary cores focused on delivering maximum performance.
+- **E-Core (Efficiency Core) Coloring**: For CPUs with efficiency cores, you can use the enhanced color settings (E-Line and E-Solid) to visually differentiate these cores in the graph. This is particularly useful for processors that combine high-performance and high-efficiency cores.
 
-## Customizing the Skin
+To switch the graph color scheme for a specific core to the E-core coloring, manually update the relevant `[CPUxGraph]` section in the `.ini` file to use `#ESR`, `#ESG`, `#ESB`, and `#ESA` for the `SolidColor` and `#ELR`, `#ELG`, `#ELB`, and `#ELA` for the `PrimaryColor`.
 
-"Rainmeter Per-Core Graph" offers extensive customization options, allowing you to tailor the skin's appearance to your personal taste. You can adjust colors for P-cores and E-cores, as well as modify graph padding and size. Below are the steps to customize these elements:
+To adjust these settings, edit the `[Variables]` section in the `.ini` file.
 
-### Adjusting Core Colors
-The skin allows separate color configurations for P-cores and E-cores using RGB variables. To customize these colors:
-
-1. **Access the Skin's INI File**: Open the skin's `.ini` file in a text editor.
-2. **Locate the Color Variables**: Find the variables for core colors. For P-cores, look for variables prefixed with `L` for lines and `S` for solid colors (e.g., `LR`, `LG`, `LB`, `LA` for line color and `SR`, `SG`, `SB`, `SA` for solid color). For E-cores coloring, variables start with `E` (e.g., `ELR`, `ELG`, `ELB`, `ELA` for line color and `ESR`, `ESG`, `ESB`, `ESA` for solid color).
-3. **Edit the RGB Values**: Change these values to your desired colors. For example:
-   ```ini
-   ; P-core Line Color (White)
-   LR=255
-   LG=255
-   LB=255
-   LA=120
-   
-   ; E-core Line Color (Light Green)
-   ELR=220
-   ELG=255
-   ELB=220
-   ELA=120
-   ```
-
- ### Modifying Graph Padding and Size
-
-Customize the padding and size of the graphs as follows:
-
-1. **Open the INI File**: Again, in the skin's .ini file.
-2. **Adjust Size and Padding Variables**: Modify variables like GraphW, GraphH, GraphWPad, and GraphHPad to change graph dimensions and spacing. For instance:
-   ```ini
-   GraphW=60       ; Width of each graph
-   GraphH=60       ; Height of each graph
-   GraphWPad=10    ; Horizontal padding
-   GraphHPad=10    ; Vertical padding
-   ```
-   
-The graph margin/color will be automatically adjusted according to the following settings:
-   ```ini
-   [CPU8Graph]
+Example of graph section source code:
+   ``ini
+   [CPU5Graph]
    Meter=#MeterValue#
-   MeasureName=MeasureCPU8
-   X=((3*#GraphWPad#)+(2*#GraphW#))
-   Y=((2*#GraphHPad#)+(1*#GraphH#))
+   MeasureName=MeasureCPU5
+   X=((6*#GraphWPad#)+(5*#GraphW#))
+   Y=((1*#GraphHPad#)+(0*#GraphH#))
    W=#GraphW#
    H=#GraphH#
    PrimaryColor=#LR#,#LG#,#LB#,#LA#
    SolidColor=#SR#,#SG#,#SB#,#SA#
    AntiAlias=#AntiAliasValue#
-   ```
-### Applying Customizations
+   ``
 
-After making changes:
+   ``ini
+   [CPU17Graph]
+   Meter=#MeterValue#
+   MeasureName=MeasureCPU17
+   X=((6*#GraphWPad#)+(5*#GraphW#))
+   Y=((3*#GraphHPad#)+(2*#GraphH#))
+   W=#GraphW#
+   H=#GraphH#
+   PrimaryColor=#ELR#,#ELG#,#ELB#,#ELA#
+   SolidColor=#ESR#,#ESG#,#ESB#,#ESA#
+   AntiAlias=#AntiAliasValue#
+   ``
 
-1. **Save the INI File**: Confirm all modifications are saved.
-2. **Refresh the Skin**: Right-click the Rainmeter icon in the system tray, find your skin, and select 'Refresh' to apply your customizations.
-
-These steps allow you to personalize the "Rainmeter Per-Core Graph" to better suit your desktop environment and visual preferences.
-
-## Acknowledgments and Contributions
-
-This project was developed with assistance from ChatGPT, an AI language model by OpenAI, which provided valuable support in writing and structuring the Rainmeter skin. We appreciate the contribution of ChatGPT in the development process.
-
-Your feedback and contributions to this project are welcome. Please feel free to file issues or submit pull requests with your improvements.
+## Contributing
+Contributions to improve the plugin are welcome. Please feel free to fork the repository, make your changes, and submit a pull request.
 
 ## License
+This project is licensed under the Creative Commons Attribution-Non-Commercial-Share Alike 3.0 License. See the [LICENSE](LICENSE.md) file for more details.
 
-"Rainmeter Per-Core Graph" is released under the Creative Commons Attribution-Non-Commercial-Share Alike 3.0 License.
+## Acknowledgments
+This project was significantly aided by ChatGPT-4 from OpenAI, which provided invaluable assistance in the development of the "CPU Usage Per-Core Graph" skin and the composition of this README.md. Special thanks to OpenAI for creating such a powerful tool, and to the Rainmeter community for their continued support and inspiration.
+
+
