@@ -18,7 +18,7 @@ Welcome to "Rainmeter Per-Core Graph," a highly functional Rainmeter skin crafte
 
 ## Getting Started
 
-To get started with "Rainmeter Per-Core Graph," download the `.rmskin` package from this repository. Make sure Rainmeter is installed on your system (version [specify version] or higher is recommended). Follow the instructions in the **Installation Guide** below to seamlessly integrate the skin into your desktop.
+To get started with "Rainmeter Per-Core Graph," download the `.rmskin` package from this repository. Make sure Rainmeter is installed on your system. Follow the instructions in the **Installation Guide** below to seamlessly integrate the skin into your desktop.
 
 ## Installation Guide
 
@@ -35,7 +35,7 @@ To get started with "Rainmeter Per-Core Graph," download the `.rmskin` package f
 The skin allows separate color configurations for P-cores and E-cores using RGB variables. To customize these colors:
 
 1. **Access the Skin's INI File**: Open the skin's `.ini` file in a text editor.
-2. **Locate the Color Variables**: Find the variables for core colors. For P-cores, look for variables prefixed with `L` for lines and `S` for solid colors (e.g., `LR`, `LG`, `LB`, `LA` for line color and `SR`, `SG`, `SB`, `SA` for solid color). For E-cores, variables start with `E` (e.g., `ELR`, `ELG`, `ELB`, `ELA` for line color and `ESR`, `ESG`, `ESB`, `ESA` for solid color).
+2. **Locate the Color Variables**: Find the variables for core colors. For P-cores, look for variables prefixed with `L` for lines and `S` for solid colors (e.g., `LR`, `LG`, `LB`, `LA` for line color and `SR`, `SG`, `SB`, `SA` for solid color). For E-cores coloring, variables start with `E` (e.g., `ELR`, `ELG`, `ELB`, `ELA` for line color and `ESR`, `ESG`, `ESB`, `ESA` for solid color).
 3. **Edit the RGB Values**: Change these values to your desired colors. For example:
    ```ini
    ; P-core Line Color (White)
@@ -61,6 +61,19 @@ Customize the padding and size of the graphs as follows:
    GraphH=60       ; Height of each graph
    GraphWPad=10    ; Horizontal padding
    GraphHPad=10    ; Vertical padding
+   
+The graph margin/color will be automatically adjusted according to the following settings:
+   ```ini
+   [CPU8Graph]
+   Meter=#MeterValue#
+   MeasureName=MeasureCPU8
+   X=((3*#GraphWPad#)+(2*#GraphW#))
+   Y=((2*#GraphHPad#)+(1*#GraphH#))
+   W=#GraphW#
+   H=#GraphH#
+   PrimaryColor=#LR#,#LG#,#LB#,#LA#
+   SolidColor=#SR#,#SG#,#SB#,#SA#
+   AntiAlias=#AntiAliasValue#
 
 ### Applying Customizations
 
