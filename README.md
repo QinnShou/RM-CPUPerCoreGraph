@@ -2,6 +2,8 @@
 
 ![Rainmeter Per-Core Graph Screenshot](https://github.com/QinnShou/RM-PerCoreGraph/blob/main/plugin%20screenshot.png)
 
+(Left:Windows Task Manager / Right: Rainmeter skin)
+
 ## Introduction
 
 Welcome to "Rainmeter Per-Core Graph," a highly functional Rainmeter skin crafted for detailed monitoring of CPU utilization across all 24 cores. This skin features a unique 6x4 grid layout and is designed to provide a comprehensive view of your CPU's performance with an emphasis on customization and user experience.
