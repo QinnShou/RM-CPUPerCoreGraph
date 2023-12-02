@@ -49,6 +49,7 @@ The skin allows separate color configurations for P-cores and E-cores using RGB 
    ELG=255
    ELB=220
    ELA=120
+   ```
 
  ### Modifying Graph Padding and Size
 
@@ -61,6 +62,7 @@ Customize the padding and size of the graphs as follows:
    GraphH=60       ; Height of each graph
    GraphWPad=10    ; Horizontal padding
    GraphHPad=10    ; Vertical padding
+   ```
    
 The graph margin/color will be automatically adjusted according to the following settings:
    ```ini
@@ -74,7 +76,7 @@ The graph margin/color will be automatically adjusted according to the following
    PrimaryColor=#LR#,#LG#,#LB#,#LA#
    SolidColor=#SR#,#SG#,#SB#,#SA#
    AntiAlias=#AntiAliasValue#
-
+   ```
 ### Applying Customizations
 
 After making changes:
