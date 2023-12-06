@@ -24,45 +24,31 @@ The "CPU Usage Per-Core Graph" is a Rainmeter skin plugin designed to visually d
 
 ## Customization
 You can customize the following aspects:
-- Graph dimensions variables (`GraphW`, `GraphH` for each graph width and height).
-- Padding variables (`GraphWPad`, `GraphHPad` for width and height padding).
+- Graph size (`GraphW`, `GraphH` for each graph width and height).
+- Padding size (`GraphWPad`, `GraphHPad` for width and height padding).
+- Core Coloring (RGB format #LR, #LG, #LB, #LA; #ELR, #ELG, #ELB, #ELA).
+- Option of rounded corner by YeyeBBC (ShapeValue)
 
-### P-Core and E-Core Coloring
-This plugin supports distinct coloring options for different CPU core types:
+Note that the graph is automatically padding+size margin-adjusted in the following formula:
+   ``ini
+   X=((CurrentColumn+1)*GraphWPad)+((CurrentColumn*GraphW)
+   Y=((CurrentRow+1)*GraphHPad)+((CurrentRow)*GraphH)
+   W=GraphW
+   H=GraphH
+   ``
+For Rounded corner settings:
+   ``ini
+   ; ShapeValue=Rectangle [Relative X][Relative Y][Width][Height][Cornor radius X][Cornor radius Y]
+   ShapeValue=Rectangle 0,0,#GraphW#,#GraphH#,4,4
+   ``
+   
+However, the margin of 6x4 is used by default. For any other margin settings, config modifying is required. It is located by the end of the source code, named container.
 
-- **P-Core (Performance Core) Coloring**: By default, the plugin uses the regular color settings (Line and Solid Fill) for P-cores. These are your CPU's primary cores focused on delivering maximum performance.
-- **E-Core (Efficiency Core) Coloring**: For CPUs with efficiency cores, you can use the enhanced color settings (E-Line and E-Solid) to visually differentiate these cores in the graph. This is particularly useful for processors that combine high-performance and high-efficiency cores.
-
+### Core Coloring
+By default, the plugin uses the regular color settings (Line and Solid Fill, white and gray) for P-cores. These are your CPU's primary cores focused on delivering maximum performance. E-core is colored green by default.
 To switch the graph color scheme for a specific core to the E-core coloring, manually update the relevant `[CPUxGraph]` section in the `.ini` file to use `#ESR`, `#ESG`, `#ESB`, and `#ESA` for the `SolidColor` and `#ELR`, `#ELG`, `#ELB`, and `#ELA` for the `PrimaryColor`.
 
 To adjust these settings, edit the `[Variables]` section in the `.ini` file.
-
-Example of graph section source code:
-   ``ini
-   [CPU5Graph]
-   Meter=#MeterValue#
-   MeasureName=MeasureCPU5
-   X=((6*#GraphWPad#)+(5*#GraphW#))
-   Y=((1*#GraphHPad#)+(0*#GraphH#))
-   W=#GraphW#
-   H=#GraphH#
-   PrimaryColor=#LR#,#LG#,#LB#,#LA#
-   SolidColor=#SR#,#SG#,#SB#,#SA#
-   AntiAlias=#AntiAliasValue#
-   ``
-
-   ``ini
-   [CPU17Graph]
-   Meter=#MeterValue#
-   MeasureName=MeasureCPU17
-   X=((6*#GraphWPad#)+(5*#GraphW#))
-   Y=((3*#GraphHPad#)+(2*#GraphH#))
-   W=#GraphW#
-   H=#GraphH#
-   PrimaryColor=#ELR#,#ELG#,#ELB#,#ELA#
-   SolidColor=#ESR#,#ESG#,#ESB#,#ESA#
-   AntiAlias=#AntiAliasValue#
-   ``
 
 ## Contributing
 Contributions to improve the plugin are welcome. Please feel free to fork the repository, make your changes, and submit a pull request.
