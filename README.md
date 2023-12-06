@@ -1,8 +1,8 @@
-# Rainmeter Per-Core Graph
+# Rainmeter CPU Per-Core Graph
 
 ![Rainmeter Per-Core Graph Screenshot](https://github.com/QinnShou/RM-PerCoreGraph/blob/main/plugin%20screenshot%202.png)
 
-(Left:Windows Task Manager / Right: Rainmeter skin)
+(Windows Task Manager/Rainmeter skin)
 
 ## Description
 The "CPU Usage Per-Core Graph" is a Rainmeter skin plugin designed to visually display CPU usage for each logical processor. This plugin offers unique features like automatic margin adjusting and per-core coloring, making it an essential tool for monitoring CPU performance in a visually appealing way.
