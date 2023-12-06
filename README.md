@@ -22,14 +22,14 @@ The "CPU Usage Per-Core Graph" is a Rainmeter skin plugin designed to visually d
 - Load the skin through Rainmeter's Manage interface.
 - Edit the .ini file to customize the appearance.
 
-## Customization
+# Customization
 You can customize the following aspects:
 - Graph size (`GraphW`, `GraphH` for each graph width and height).
 - Padding size (`GraphWPad`, `GraphHPad` for width and height padding).
 - Core Coloring (RGB format #LR, #LG, #LB, #LA; #ELR, #ELG, #ELB, #ELA).
 - Option of rounded corner.
 
-## Graph auto-margin/size formula
+### Graph auto-margin/size formula
    ```ini
    X=((CurrentColumn+1)*GraphWPad)+((CurrentColumn*GraphW)
    Y=((CurrentRow+1)*GraphHPad)+((CurrentRow)*GraphH)
@@ -38,7 +38,7 @@ You can customize the following aspects:
    ```
 The margin of 6x4 is used by default. Modify variables of [CPUXXGraphWrapper] by the end of the ini for other margins.
 
-## Rounded corner config by YeyeBBC
+### Rounded corner config by YeyeBBC
    ```ini
    ; ShapeValue=Rectangle [Relative X][Relative Y][Width][Height][Cornor radius X][Cornor radius Y]
    ShapeValue=Rectangle 0,0,#GraphW#,#GraphH#,4,4
