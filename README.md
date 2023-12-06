@@ -27,22 +27,22 @@ You can customize the following aspects:
 - Graph size (`GraphW`, `GraphH` for each graph width and height).
 - Padding size (`GraphWPad`, `GraphHPad` for width and height padding).
 - Core Coloring (RGB format #LR, #LG, #LB, #LA; #ELR, #ELG, #ELB, #ELA).
-- Option of rounded corner by YeyeBBC (ShapeValue)
+- Option of rounded corner.
 
-Note that the graph is automatically padding+size margin-adjusted in the following formula:
-   ``ini
+## Graph auto-margin/size formula
+   ```ini
    X=((CurrentColumn+1)*GraphWPad)+((CurrentColumn*GraphW)
    Y=((CurrentRow+1)*GraphHPad)+((CurrentRow)*GraphH)
    W=GraphW
    H=GraphH
-   ``
-For Rounded corner settings:
-   ``ini
+   ```
+The margin of 6x4 is used by default. Modify variables of [CPUXXGraphWrapper] by the end of the ini for other margins.
+
+## Rounded corner config by YeyeBBC
+   ```ini
    ; ShapeValue=Rectangle [Relative X][Relative Y][Width][Height][Cornor radius X][Cornor radius Y]
    ShapeValue=Rectangle 0,0,#GraphW#,#GraphH#,4,4
-   ``
-   
-However, the margin of 6x4 is used by default. For any other margin settings, config modifying is required. It is located by the end of the source code, named container.
+   ```
 
 ### Core Coloring
 By default, the plugin uses the regular color settings (Line and Solid Fill, white and gray) for P-cores. These are your CPU's primary cores focused on delivering maximum performance. E-core is colored green by default.
