@@ -50,13 +50,15 @@ To switch the graph color scheme for a specific core to the E-core coloring, man
 
 To adjust these settings, edit the `[Variables]` section in the `.ini` file.
 
-## Contributing
-Contributions to improve the plugin are welcome. Please feel free to fork the repository, make your changes, and submit a pull request.
+## Authors
+QinnShou (author of script)
+YeyeBBC (author of several function)
+ChatGPT by OpenAI (assisting with basic script structure, rainmeter Q&A, writting this readme.md)
 
 ## License
 This project is licensed under the Creative Commons Attribution-Non-Commercial-Share Alike 3.0 License. See the [LICENSE](LICENSE.md) file for more details.
 
-## Acknowledgments
-This project was significantly aided by ChatGPT-4 from OpenAI, which provided invaluable assistance in the development of the "CPU Usage Per-Core Graph" skin and the composition of this README.md. Special thanks to OpenAI for creating such a powerful tool, and to the Rainmeter community for their continued support and inspiration.
+
+
 
 
